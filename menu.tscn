@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://6403qj725n4i"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_5aqkw"]
+[ext_resource type="FontFile" uid="uid://by5yjmltx7vas" path="res://tipografia/Spooky Monster.ttf" id="1_bw3gk"]
+[ext_resource type="Texture2D" uid="uid://b367fde211bir" path="res://img/casa-menu.png" id="1_ftcep"]
+[ext_resource type="AudioStream" uid="uid://6h1aae6wl5ro" path="res://sonido/musica-menu.mp3" id="4_5m3a6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5aqkw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0, 0.4, 1)
+
+[node name="dibujo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_right = 650.0
+offset_bottom = 646.0
+texture = ExtResource("1_ftcep")
+
+[node name="Jugar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 132.0
+offset_top = -41.0
+offset_right = 313.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.960784, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.364706, 0.223529, 1)
+theme_override_fonts/font = ExtResource("1_bw3gk")
+theme_override_font_sizes/font_size = 80
+text = "jugar"
+flat = true
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_5m3a6")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 551.0
+offset_right = 1089.0
+offset_bottom = 605.0
+theme_override_colors/font_color = Color(0.192157, 0.694118, 0.458824, 1)
+theme_override_font_sizes/font_size = 11
+text = "Valentina Daruich
+PBA Programación para videojuegos
+2024"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]

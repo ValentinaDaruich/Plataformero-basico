@@ -1,0 +1,293 @@
+[gd_scene load_steps=14 format=3 uid="uid://coro0wyh421sd"]
+
+[ext_resource type="Script" path="res://nivel1.gd" id="1_ha1va"]
+[ext_resource type="PackedScene" uid="uid://b7h87haco2boc" path="res://objetos/pj.tscn" id="2_hlkbw"]
+[ext_resource type="PackedScene" uid="uid://b1c8miwm2g0ef" path="res://objetos/calabaza.tscn" id="4_asufh"]
+[ext_resource type="AudioStream" uid="uid://cdjqxa4kc6kcl" path="res://sonido/ambiente.mp3" id="4_v314a"]
+[ext_resource type="Texture2D" uid="uid://byqm8qoff4xlm" path="res://img/calabaza-hud.png" id="5_65kw4"]
+[ext_resource type="FontFile" uid="uid://by5yjmltx7vas" path="res://tipografia/Spooky Monster.ttf" id="5_ythxo"]
+[ext_resource type="PackedScene" uid="uid://c10ucaxsyf2wl" path="res://timer.tscn" id="7_1wmey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgdq5"]
+size = Vector2(1150, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cubwf"]
+size = Vector2(25, 613)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_detqj"]
+size = Vector2(205, 40.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro8gw"]
+size = Vector2(300, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cql1a"]
+size = Vector2(56, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g31c8"]
+size = Vector2(256, 39)
+
+[node name="nivel" type="Node2D"]
+script = ExtResource("1_ha1va")
+
+[node name="fondo" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.384314, 0, 0.4, 1)
+
+[node name="pj" parent="." instance=ExtResource("2_hlkbw")]
+position = Vector2(144, 573)
+scale = Vector2(0.7, 0.7)
+
+[node name="piso" type="StaticBody2D" parent="."]
+position = Vector2(608, 623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piso"]
+position = Vector2(-33, 7.5)
+shape = SubResource("RectangleShape2D_dgdq5")
+
+[node name="color-piso" type="ColorRect" parent="piso"]
+offset_left = -609.0
+offset_top = -10.0
+offset_right = 556.0
+offset_bottom = 30.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="Pared-IZ" type="StaticBody2D" parent="."]
+position = Vector2(-1, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared-IZ"]
+position = Vector2(11.5, -13.5)
+shape = SubResource("RectangleShape2D_cubwf")
+
+[node name="p-Iz" type="ColorRect" parent="Pared-IZ"]
+offset_top = -323.0
+offset_right = 25.0
+offset_bottom = 331.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="Pared-DER" type="StaticBody2D" parent="."]
+position = Vector2(1128, 320)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared-DER"]
+position = Vector2(11.5, -13.5)
+shape = SubResource("RectangleShape2D_cubwf")
+
+[node name="p-Iz" type="ColorRect" parent="Pared-DER"]
+offset_top = -323.0
+offset_right = 25.0
+offset_bottom = 331.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaMediana" type="StaticBody2D" parent="."]
+position = Vector2(27, 439)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaMediana"]
+position = Vector2(100.5, 18.75)
+shape = SubResource("RectangleShape2D_detqj")
+
+[node name="ColorRect" type="ColorRect" parent="plataformaMediana"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 39.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaMediana2" type="StaticBody2D" parent="."]
+position = Vector2(925, 385)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaMediana2"]
+position = Vector2(100.5, 18.75)
+shape = SubResource("RectangleShape2D_detqj")
+
+[node name="ColorRect" type="ColorRect" parent="plataformaMediana2"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 39.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaMediana3" type="StaticBody2D" parent="."]
+position = Vector2(720, 215)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaMediana3"]
+position = Vector2(100.5, 18.75)
+shape = SubResource("RectangleShape2D_detqj")
+
+[node name="ColorRect" type="ColorRect" parent="plataformaMediana3"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 39.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaMediana4" type="StaticBody2D" parent="."]
+position = Vector2(88, 165)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="plataformaMediana4"]
+offset_left = -100.0
+offset_top = -1.0
+offset_right = 240.0
+offset_bottom = 39.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaMediana4"]
+position = Vector2(89, 18)
+shape = SubResource("RectangleShape2D_ro8gw")
+metadata/_edit_group_ = true
+
+[node name="plataformaMediana5" type="StaticBody2D" parent="."]
+position = Vector2(737, 216)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaMediana5"]
+position = Vector2(100.5, 18.75)
+shape = SubResource("RectangleShape2D_detqj")
+
+[node name="ColorRect" type="ColorRect" parent="plataformaMediana5"]
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 39.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaChica" type="StaticBody2D" parent="."]
+position = Vector2(353, 526)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaChica"]
+position = Vector2(28, 10)
+shape = SubResource("RectangleShape2D_cql1a")
+
+[node name="ColorRect2" type="ColorRect" parent="plataformaChica"]
+offset_right = 56.0
+offset_bottom = 20.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaChica2" type="StaticBody2D" parent="."]
+position = Vector2(318, 360)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaChica2"]
+position = Vector2(28, 10)
+shape = SubResource("RectangleShape2D_cql1a")
+
+[node name="ColorRect2" type="ColorRect" parent="plataformaChica2"]
+offset_right = 56.0
+offset_bottom = 20.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="plataformaChica3" type="StaticBody2D" parent="."]
+position = Vector2(518, 145)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataformaChica3"]
+position = Vector2(28, 10)
+shape = SubResource("RectangleShape2D_cql1a")
+
+[node name="ColorRect2" type="ColorRect" parent="plataformaChica3"]
+offset_right = 56.0
+offset_bottom = 20.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+
+[node name="Calabaza" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(54, 382)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza2" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(700, 456)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza7" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(96.0001, 10)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza3" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(357, 471)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza4" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(46, 557)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza5" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(922, 325)
+scale = Vector2(0.4, 0.4)
+
+[node name="Calabaza6" parent="." instance=ExtResource("4_asufh")]
+position = Vector2(535, 246)
+scale = Vector2(0.4, 0.4)
+
+[node name="ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v314a")
+autoplay = true
+bus = &"Ambience"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+offset_left = 1035.0
+offset_top = 45.0
+offset_right = 1090.0
+offset_bottom = 100.0
+texture = ExtResource("5_65kw4")
+expand_mode = 1
+
+[node name="contadorItems" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 68.0
+offset_right = -71.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ythxo")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" parent="UI" instance=ExtResource("7_1wmey")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 470.0
+offset_top = 300.0
+offset_right = 723.0
+offset_bottom = 340.0
+color = Color(0.192157, 0.694118, 0.458824, 1)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
+position = Vector2(129, 20.5)
+shape = SubResource("RectangleShape2D_g31c8")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 548.0
+offset_top = 319.0
+offset_right = 867.0
+offset_bottom = 359.0
+rotation = 1.5708
+color = Color(0.192157, 0.694118, 0.458824, 1)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/StaticBody2D"]
+position = Vector2(160, 20.5)
+shape = SubResource("RectangleShape2D_g31c8")
+
+[connection signal="recoger_item" from="Calabaza" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza2" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza7" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza3" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza4" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza5" to="." method="_on_calabaza_recoger_item"]
+[connection signal="recoger_item" from="Calabaza6" to="." method="_on_calabaza_recoger_item"]

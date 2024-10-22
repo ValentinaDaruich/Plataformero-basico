@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj81ty8klyf3h"]
+
+[ext_resource type="Script" path="res://script/perder.gd" id="1_2un1n"]
+[ext_resource type="Texture2D" uid="uid://b367fde211bir" path="res://img/casa-menu.png" id="2_nxw17"]
+[ext_resource type="FontFile" uid="uid://by5yjmltx7vas" path="res://tipografia/Spooky Monster.ttf" id="3_u5mwr"]
+[ext_resource type="AudioStream" uid="uid://6h1aae6wl5ro" path="res://sonido/musica-menu.mp3" id="4_k3scj"]
+
+[node name="Perder" type="Node"]
+script = ExtResource("1_2un1n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.384314, 0, 0.4, 1)
+
+[node name="dibujo" type="TextureRect" parent="."]
+offset_left = 4.0
+offset_right = 650.0
+offset_bottom = 646.0
+texture = ExtResource("2_nxw17")
+
+[node name="Jugar" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 125.0
+offset_right = 283.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.960784, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.364706, 0.223529, 1)
+theme_override_fonts/font = ExtResource("3_u5mwr")
+theme_override_font_sizes/font_size = 40
+text = "Reiniciar"
+flat = true
+
+[node name="musica" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k3scj")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 620.0
+offset_top = 243.0
+offset_right = 916.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("3_u5mwr")
+theme_override_font_sizes/font_size = 100
+text = "ooooops"
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
